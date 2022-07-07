@@ -1,0 +1,3 @@
+[submodule "src/automate/measuresuite"]
+	path = src/automate/measuresuite
+	url = https://github.com/c-ae/measuresuite.git

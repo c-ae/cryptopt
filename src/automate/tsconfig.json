@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "ES2021",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@bcb/*": ["./bitcoin-core-bridge/*"],
+      "@fb/*": ["./fiat-bridge/*"],
+      "@bb/*": ["./bssl-bridge/*"]
+    }
+  },
+  "include": [
+    ".",
+    "./fiat-bridge/unsaturated_solinas",
+    "./fiat-bridge/word_by_word_montgomery",
+    "./fiat-bridge/fiat.c",
+    "./fiat-bridge/fiat.h",
+    "./keccak-bridge/keccak.c",
+    "./bitcoin-core-bridge/Makefile",
+    "./bitcoin-core-bridge/llvm2cryptopt.sed",
+    "./bitcoin-core-bridge/*.h",
+    "./bitcoin-core-bridge/*.c",
+    "./bitcoin-core-bridge/*.json"
+  ],
+  "exclude": ["./node_modules", "dist"],
+  "ts-node": {
+    "transpileOnly": true
+  },
+  "filePermissions": {
+    "./dist/generate_asm.js": "0700",
+    "./dist/populatio-dicentur.js": "0700"
+  },
+  "hooks": ["copy-files", "file-permissions"]
+}
+
